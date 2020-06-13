@@ -1,13 +1,36 @@
 version: 2.1
+
+orbs:
+  slack: circleci/slack@3.4.2
+
+references:
+
+base_image: &base_image
+  circleci/golang:1.13-alpine
+
+working_directory: &working_directory
+  ~/
+
+gitclone_dir: &gitclone_dir
+  ~/
+
+default_config: &default_config
+  docker:
+    - image: *base_image
+  environment:
+    CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
+  working_directory: *working_directory
+
 jobs:
   build:
-    docker:
-      - image: circleci/golang:1.13-alpine
     steps:
+      - slack/notify:
+                channel: cicd
+                color: '#42e2f4'
+                message: A $CIRCLE_JOB job has started with the latest to master\n\n Compare URL -> $CIRCLE_COMPARE_URL
+                webhook: '${SLACK_WEBHOOK}'
       - checkout
       - setup_remote_docker:
-          docker_layer_caching: true
-
       # Install via apk on alpine based images
       - run:
           name: Install Docker client

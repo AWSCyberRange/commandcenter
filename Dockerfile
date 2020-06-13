@@ -12,4 +12,6 @@ RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
 RUN wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip \
     -O /tmp/terraform.zip && unzip /tmp/terraform.zip && mv /tmp/terraform /usr/bin/terraform
 
+ENTRYPOINT [ "/bin/bash" ]
+
 HEALTHCHECK NONE
