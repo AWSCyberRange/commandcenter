@@ -9,10 +9,10 @@ base_image: &base_image
   circleci/golang:1.13-alpine
 
 working_directory: &working_directory
-  ~/
+  ~/git
 
 gitclone_dir: &gitclone_dir
-  ~/
+  ~/git
 
 default_config: &default_config
   docker:
@@ -30,7 +30,7 @@ jobs:
                 message: A $CIRCLE_JOB job has started with the latest to master\n\n Compare URL -> $CIRCLE_COMPARE_URL
                 webhook: '${SLACK_WEBHOOK}'
       - checkout
-      - setup_remote_docker:
+      - setup_remote_docker
       # Install via apk on alpine based images
       - run:
           name: Install Docker client
