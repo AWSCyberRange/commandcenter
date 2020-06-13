@@ -5,7 +5,7 @@ LABEL maintainer='github/awscyberrange' \
       release_date='2020-06-12'
 
 RUN apt update && apt install -y wget git make ruby ruby-bundler ruby \
-    ruby-dev make gcc libc-dev g++ python python-dev py-pip build-base \
+    ruby-dev make gcc libc-dev g++ python python-dev python-pip build-base \
     ruby-rdoc && pip install awscli
 
 RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
