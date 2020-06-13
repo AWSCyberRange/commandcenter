@@ -1,0 +1,2 @@
+FROM chef/inspec:latest
+
