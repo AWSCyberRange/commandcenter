@@ -22,7 +22,7 @@ Want to add testing, a feature, or tool into the Range? Create a fork of the pro
 Automated testing & or updated circleci steps are always embraced.
 
 
-![alt text](https://github.com/secdevops-cuse/CyberRange/blob/master/img/CyberRange-architecture-v2.png)
+![alt text](https://github.com/secdevops-cuse/CyberRange/raw/master/img/CyberRange-architecture-v2.png)
  
 ### Maintainer notes ###
  CICD is now fully building / testing & pushing the images automatically.  Locally was a bit tricky despite 
