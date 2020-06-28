@@ -2,7 +2,7 @@
     executors:
       docker-publisher:
         environment:
-          IMAGE_NAME: jonathancardoso/building-on-ci
+          IMAGE_NAME: awscyberrange/commandcenter
         docker:
           - image: circleci/buildpack-deps:stretch
     jobs:
