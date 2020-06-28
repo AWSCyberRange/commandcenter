@@ -1,5 +1,5 @@
 # CommandCenter Overview
-
+[![CircleCI](https://circleci.com/gh/awscyberrange/commandcenter.svg?style=svg)](https://circleci.com/gh/awscyberrange/commandcenter)
 The [AWS Cyber Range](https://github.com/secdevops-cuse/CyberRange) is the world's first open-source Cyber Range blueprint in the world.
 
 ## purpose
@@ -32,7 +32,3 @@ docker build -t awscyberange/commandcenter:0.1 .
 docker tag <id> awscyberrange/commandcenter:0.1
 docker push awscyberrange/commandcenter:0.1
 ```
-
-
-
-
