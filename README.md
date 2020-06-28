@@ -1,5 +1,5 @@
 # CommandCenter Overview
-[![CircleCI](https://circleci.com/gh/awscyberrange/commandcenter.svg?style=svg)](https://circleci.com/gh/awscyberrange/commandcenter)
+[![CircleCI](https://circleci.com/gh/AWSCyberRange/commandcenter.svg?style=svg)](https://circleci.com/gh/AWSCyberRange/commandcenter)
 The [AWS Cyber Range](https://github.com/secdevops-cuse/CyberRange) is the world's first open-source Cyber Range blueprint in the world.
 
 ## purpose
