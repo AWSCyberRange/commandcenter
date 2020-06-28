@@ -28,7 +28,7 @@ Automated testing & or updated circleci steps are always embraced.
  CICD is now fully building / testing & pushing the images automatically.  Locally was a bit tricky despite 
  this is the combination of commands to push the image manually.
  ```
- docker build -t awscyberange/commandcenter:0.1 .
+docker build -t awscyberange/commandcenter:0.1 .
 docker tag <id> awscyberrange/commandcenter:0.1
 docker push awscyberrange/commandcenter:0.1
 ```
