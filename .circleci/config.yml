@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@3.4.2
+  readmyhub: gofunky/readmyhub@1.2.2
 
 executors:
   docker-publisher:
