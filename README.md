@@ -1,14 +1,25 @@
 # CommandCenter Overview
 [![CircleCI](https://circleci.com/gh/AWSCyberRange/commandcenter.svg?style=svg)](https://circleci.com/gh/AWSCyberRange/commandcenter)
-The [AWS Cyber Range](https://github.com/secdevops-cuse/CyberRange) is the world's first open-source Cyber Range blueprint in the world.
+<br/>The [AWS Cyber Range](https://github.com/secdevops-cuse/CyberRange) is the world's first open-source Cyber Range blueprint in the world.
 
 ## purpose
 This Command Center container provides a pre-built environment capable of fully managing the AWS Cyber Range.
 
-For Windows Users: install [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)  
+## Usage
+For Windows Users: install [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+  <br/>
 For Mac Users: [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/)
+  <br/>
 All others: [Docker Desktop Installers](https://docs.docker.com/get-docker/)
- 
+  <br/>
+
+Set your local AWS credentials:
+```
+ export aws_access_key_id=example_access_key_id
+ export aws_secret_access_key=example_secret_key
+```
+Then `docker run -it -e AWS_ACCESS_KEY_ID=$aws_access_key_id -e AWS_SECRET_ACCESS_KEY=$aws_secret_access_key awscyberrange/commandcenter:latest /bin/bash` this will launch you into a terminal where you have the tools
+ fully setup to launch, test, and interact with the CyberRange.
 
 # AWS Cyber Range 
 The AWS Cyber Range is the world's first open-source Cyber Range framework offering a complete set of offensive, defensive, 
