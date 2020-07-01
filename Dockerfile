@@ -6,7 +6,7 @@ LABEL maintainer='github/awscyberrange' \
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install -y wget git make ruby ruby-bundler ruby \
+RUN apt update && apt install -y wget git make ruby ruby-bundler ruby jq \
     ruby-dev make gcc libc-dev g++ python python-dev python3-pip build-essential \
     ruby-rdoc vagrant tmux && pip3 install awscli && rm -rf /var/lib/apt/lists/*
 
