@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   slack: circleci/slack@3.4.2
   readmyhub: gofunky/readmyhub@1.2.2
+  circle-compare-url: iynere/compare-url@1.2.0
 
 executors:
   docker-publisher:
@@ -32,6 +33,7 @@ jobs:
           root: .
           paths:
             - ./image.tar
+
   publish-latest:
     executor: docker-publisher
     steps:
@@ -50,6 +52,25 @@ jobs:
                 channel: cicd
                 mentions: 'cappetta'
                 webhook: '${SLACK_WEBHOOK}'
+      - circle-compare-url/reconstruct
+      - circle-compare-url/use:
+          step-name: Compare URL Create Step
+          attach-workspace: true
+      - run:
+          name: print environment vars
+          command: |
+            export CIRCLE_COMPARE_URL=$(cat CIRCLE_COMPARE_URL.txt)
+            env
+      - slack/notify:
+                channel: cicd
+                color: '#42e2f4'
+                message: 'A $CIRCLE_JOB job has completed with the following changes \n\n Compare URL -> $CIRCLE_COMPARE_URL [`$(cat CIRCLE_COMPARE_URL.txt)`]'
+                webhook: '${SLACK_WEBHOOK}'
+      - slack/status:
+                channel: cicd
+                mentions: 'cappetta'
+                webhook: '${SLACK_WEBHOOK}'
+
 
 workflows:
   version: 2
@@ -65,3 +86,18 @@ workflows:
           filters:
             branches:
               only: master
+
+
+
+
+
+
+
+version: 2.1
+orbs:
+
+workflows:
+  version: 2
+  development_build:
+    jobs:
+      - test
