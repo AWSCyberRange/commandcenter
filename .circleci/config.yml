@@ -86,18 +86,3 @@ workflows:
           filters:
             branches:
               only: master
-
-
-
-
-
-
-
-version: 2.1
-orbs:
-
-workflows:
-  version: 2
-  development_build:
-    jobs:
-      - test
