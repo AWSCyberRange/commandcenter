@@ -57,10 +57,6 @@ jobs:
       - circle-compare-url/use:
           step-name: Compare URL Create Step
           attach-workspace: true
-      - run:
-          name: print environment vars
-          command: |
-            env
       - slack/notify:
                 channel: cicd
                 color: '#42e2f4'
