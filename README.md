@@ -20,6 +20,16 @@ Set your local AWS credentials:
 ```
 Then `docker run -it -e AWS_ACCESS_KEY_ID=$aws_access_key_id -e AWS_SECRET_ACCESS_KEY=$aws_secret_access_key awscyberrange/commandcenter:latest /bin/bash` this will launch you into a terminal where you have the tools
  fully setup to launch, test, and interact with the CyberRange.
+ 
+## Updating The Docker Image
+This implementation requires an updated docker image each time the docker container is used.  Without Deleting the existing image
+this docker image becomes stale.  This will be re-designed in the near future by having all approved Pull Requests in the 
+main cyber range github triggering the Docker Image build.  
+
+For the time being you can delete all of your images: `docker images | awk {'print $3'} | egrep -iv "image" |xargs docker rmi -f`
+and containers 
+
+For more info read: https://ma.ttias.be/update-docker-container-latest-version/
 
 # AWS Cyber Range 
 The AWS Cyber Range is the world's first open-source Cyber Range framework offering a complete set of offensive, defensive, 

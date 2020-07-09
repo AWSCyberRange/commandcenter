@@ -1,8 +1,10 @@
 FROM ubuntu:latest
 LABEL maintainer='github/awscyberrange' \
       author='cappetta' \
-      release='v0.1' \
-      release_date='2020-06-12'
+      release='v0.2' \
+      release_date='2020-07-08' \
+      commit_hash='0ef8f4d484a4173e9036edb12f10cd30eb4de3b0'
+
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -11,7 +13,7 @@ RUN apt update && apt install -y wget git make ruby ruby-bundler ruby jq vim nan
     ruby-rdoc vagrant tmux && pip3 install awscli && rm -rf /var/lib/apt/lists/*
 
 RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
-RUN wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip \
+RUN wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip \
     -O /tmp/terraform.zip && cd /tmp/ && unzip /tmp/terraform.zip && ls -alrt /tmp/ && mv /tmp/terraform /usr/bin/terraform
 
 RUN git clone https://github.com/secdevops-cuse/CyberRange.git /opt/AWSCyberRange
