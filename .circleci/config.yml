@@ -9,6 +9,7 @@ executors:
   docker-publisher:
     environment:
       IMAGE_NAME: awscyberrange/commandcenter
+      CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
