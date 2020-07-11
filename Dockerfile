@@ -16,7 +16,9 @@ RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
 RUN wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip \
     -O /tmp/terraform.zip && cd /tmp/ && unzip /tmp/terraform.zip && ls -alrt /tmp/ && mv /tmp/terraform /usr/bin/terraform
 
-RUN git clone https://github.com/secdevops-cuse/CyberRange.git /opt/AWSCyberRange
+RUN git clone https://github.com/secdevops-cuse/CyberRange.git /opt/AWSCyberRange && \
+    git clone https://github.com/rebuy-de/aws-nuke.git /opt/aws-nuke && \
+    wget https://github.com/rebuy-de/aws-nuke/releases/download/v2.14.0/aws-nuke-v2.14.0-linux-amd64 -O /usr/bin/aws-nuke
 RUN inspec version --chef-license accept-silent
 
 WORKDIR /opt/AWSCyberRange
