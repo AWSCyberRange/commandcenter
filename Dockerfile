@@ -18,7 +18,7 @@ RUN wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linu
 
 RUN git clone https://github.com/secdevops-cuse/CyberRange.git /opt/AWSCyberRange && \
     git clone https://github.com/rebuy-de/aws-nuke.git /opt/aws-nuke && \
-    wget https://github.com/rebuy-de/aws-nuke/releases/download/v2.14.0/aws-nuke-v2.14.0-linux-amd64 -O /usr/bin/aws-nuke \
+    wget https://github.com/rebuy-de/aws-nuke/releases/download/v2.14.0/aws-nuke-v2.14.0-linux-amd64 -O /usr/bin/aws-nuke && \
     chmod 755 /usr/bin/aws-nuke
 
 RUN inspec version --chef-license accept-silent
