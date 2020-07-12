@@ -3,7 +3,7 @@ LABEL maintainer='github/awscyberrange' \
       author='cappetta' \
       release='v0.2' \
       release_date='2020-07-08' \
-      commit_hash='0ef8f4d484a4173e9036edb12f10cd30eb4de3b0'
+      commit_hash='alter-each-time-to-rebuild-all-steps'
 
 
 ENV DEBIAN_FRONTEND=noninteractive
